@@ -34,7 +34,7 @@ include('./layout/header_index.php');
         
         <!-- Filter Section -->
         <section class="filter-section">
-            <form method="GET" action="artikel.php">
+            <form method="GET" action="list-artikel.php">
                 <label for="departemen">Filter Berdasarkan Departemen:</label>
                 <select name="departemen" id="departemen">
                     <option value="">Semua Departemen</option>
