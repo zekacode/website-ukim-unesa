@@ -24,7 +24,7 @@ include('./layout/header_index.php');
                     <h2><?= htmlspecialchars($row['tema']); ?></h2>
                 <?php endif; ?>
                 <button class="event-button">
-                    <a href="<?= htmlspecialchars($row['link']); ?>" target="_blank" style="text-decoration: none; color: inherit;">Daftar</a>
+                    <a href="https://<?= htmlspecialchars($row['link']); ?>" target="_blank" style="text-decoration: none; color: inherit;">Daftar</a>
                 </button>
                 <p class="event-description"><?= nl2br(htmlspecialchars($row['deskripsi'])); ?></p>
             </div>
