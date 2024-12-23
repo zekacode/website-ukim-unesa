@@ -1,0 +1,81 @@
+/* Root Variables */
+:root {
+    --primary-color: #FFC436;
+    --secondary-color: #0C356A;
+    --text-dark-color: #333;
+    --text-light-color: #FFFFFF;
+    --main-font: 'Montserrat', sans-serif;
+    --heading-font: 'Lora', serif;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--main-font);
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--text-dark-color);
+}
+
+/* Login Wrapper */
+.login-wrapper {
+    background-color: var(--text-light-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Login Form Header */
+.login-form-container h2 {
+    font-family: var(--heading-font);
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+/* Label */
+label {
+    font-size: 16px;
+    color: var(--text-dark-color);
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input Fields */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--text-dark-color);
+}
+
+/* Button */
+button {
+    background-color: var(--secondary-color);
+    color: var(--text-light-color);
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1A2C49;
+}
