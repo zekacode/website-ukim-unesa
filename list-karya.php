@@ -30,7 +30,7 @@ $result = mysqli_query($conn, $sql);
         
         <!-- Filter Section -->
         <section class="filter-section">
-            <form method="GET" action="karyacipta.php">
+            <form method="GET" action="list-karya.php">
                 <label for="kategori">Filter Berdasarkan Kategori:</label>
                 <select name="kategori" id="kategori">
                     <option value="">Semua Kategori</option>
