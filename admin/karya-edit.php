@@ -19,6 +19,14 @@ if (!$row) {
     exit;
 }
 
+// Ambil semua enum kategori
+$queryEnum = "SHOW COLUMNS FROM karya_cipta LIKE 'kategori'";
+$resultEnum = mysqli_query($conn, $queryEnum);
+$rowEnum = mysqli_fetch_assoc($resultEnum);
+
+preg_match("/^enum\((.*)\)$/", $rowEnum['Type'], $matches);
+$kategoriValues = str_getcsv($matches[1], ',', "'");
+
 // Proses update data jika form disubmit
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $kategori = mysqli_real_escape_string($conn, $_POST['kategori']);
@@ -41,6 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Karya</title>
+</head>
 <body>
     <div class="main-table">
         <h3 class="mb-3">Edit Karya</h3>
@@ -48,7 +61,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <!-- Dropdown Kategori -->
             <div class="mb-3 col-6">
                 <label for="kategori" class="form-label">Kategori</label>
-                <input type="text" name="kategori" id="kategori" class="form-control" value="<?= htmlspecialchars($row['kategori']); ?>" required>
+                <select name="kategori" id="kategori" class="form-control" required>
+                    <?php foreach ($kategoriValues as $value): ?>
+                        <option value="<?= htmlspecialchars($value); ?>" 
+                            <?= $value === $row['kategori'] ? 'selected' : ''; ?>>
+                            <?= htmlspecialchars($value); ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
             </div>
 
             <!-- Input Judul -->
